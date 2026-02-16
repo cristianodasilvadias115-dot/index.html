@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BR LEM Veículos - your trusted car dealership.">
+    <meta name="keywords" content="cars, dealership, BR LEM Veículos">
+    <link rel="stylesheet" href="styles.css">
+    <title>BR LEM Veículos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="slider">
+        <div class="slide fade">
+            <img src="slide1.jpg" alt="Car 1">
+        </div>
+        <div class="slide fade">
+            <img src="slide2.jpg" alt="Car 2">
+        </div>
+        <div class="slide fade">
+            <img src="slide3.jpg" alt="Car 3">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
+    <section id="gallery">
+        <h2>Car Gallery</h2>
+        <div class="car-grid">
+            <div class="car-item"><img src="car1.jpg" alt="Car 1"></div>
+            <div class="car-item"><img src="car2.jpg" alt="Car 2"></div>
+            <div class="car-item"><img src="car3.jpg" alt="Car 3"></div>
+            <div class="car-item"><img src="car4.jpg" alt="Car 4"></div>
+            <div class="car-item"><img src="car5.jpg" alt="Car 5"></div>
+            <div class="car-item"><img src="car6.jpg" alt="Car 6"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="https://wa.me/yourwhatsappnumber" method="get" target="_blank">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send via WhatsApp</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 BR LEM Veículos. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1;}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000);
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    </script>
+</body>
+</html>
